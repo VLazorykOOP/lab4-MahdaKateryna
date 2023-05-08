@@ -9,12 +9,16 @@ using namespace std;
 // Ваші файли загловки 
 //
 #include "task1.h"
+#include "task2.h"
+
 void menutask1() 
 {
     VectorLong vector1(3, 1), vector2(3, 2), vector3(3, 3);
     vector1 = (++(-(vector2 + vector3)) % 3);
     vector1.Print();
 }
+void menutask2();
+
 int main()
 {
     std::cout << " Lab #4  task chain  !\n";
@@ -38,6 +42,7 @@ int main()
             break;
         case 2:
             system("cls");
+            menutask2();
             break;
         default:
             system("cls");
@@ -45,4 +50,8 @@ int main()
         }
     } while (choose != 0);
   
+}
+
+void menutask2()
+{
 }
