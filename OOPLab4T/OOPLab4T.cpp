@@ -5,10 +5,16 @@
 
 
 #include <iostream>
-
+using namespace std;
 // Ваші файли загловки 
 //
-#include "Lab4Exmaple.h"
+#include "task1.h"
+void menutask1() 
+{
+    VectorLong vector1(3, 1), vector2(3, 2), vector3(3, 3);
+    vector1 = (++(-(vector2 + vector3)) % 3);
+    vector1.Print();
+}
 int main()
 {
     std::cout << " Lab #4  task chain  !\n";
@@ -16,9 +22,27 @@ int main()
     //  Головне меню завдань
     //  Функції та класи можуть знаходитись в інших файлах проекту
 
-    int chain = 1;
-    if (chain == 1) chain = mainExample1();
-    if (chain == 2) chain = mainExample2();
-    if (chain == 3) chain = mainExample3();
+    int choose = 0;
+    do
+    {
 
+        cout << "Choose task: " << endl;
+        cin >> choose;
+        system("cls");
+
+        switch (choose)
+        {
+        case 1:
+            system("cls");
+            menutask1();
+            break;
+        case 2:
+            system("cls");
+            break;
+        default:
+            system("cls");
+            break;
+        }
+    } while (choose != 0);
+  
 }
