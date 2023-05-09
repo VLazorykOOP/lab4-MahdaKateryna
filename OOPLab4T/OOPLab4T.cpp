@@ -42,7 +42,7 @@ int main()
             break;
         case 2:
             system("cls");
-            menutask2();
+            //menutask2();
             break;
         default:
             system("cls");

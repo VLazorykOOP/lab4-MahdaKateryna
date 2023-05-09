@@ -14,7 +14,6 @@ private:
 public:
 	EData();
 	EData(string post, string PIB);
-	EData(int post, string PIB);
 	~EData();
 
 	int getCodeError();
@@ -22,8 +21,8 @@ public:
 
 	void AddPerson( string post, string PIB);
 	
-	pair<int, string>& operator[](string& post);
-	pair<int, string>& operator[](string& PIB);
+	pair<string, string>& operator[](string& post);
+	//pair<string, string>& operator[](string& PIB);
 
 	friend ostream& operator<<(ostream& os, const pair<string, string>person);
 	friend istream& operator>>(istream& is, pair<string, string>person);

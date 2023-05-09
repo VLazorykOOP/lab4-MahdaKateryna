@@ -14,6 +14,7 @@ EData::EData(string post, string PIB)
 
 EData::~EData() {}
 
+
 int EData::getCodeError()
 {
 	return this->CodeError;
@@ -36,7 +37,7 @@ void EData::AddPerson(string post, string PIB)
 	}
 }
 
-pair<int, string>& EData::operator[](int& post)
+pair<string, string>& EData::operator[](string& post)
 {
 	for (int i = 0; i < this->size; i++)
 		if (post == this->person[i].first)
@@ -46,19 +47,19 @@ pair<int, string>& EData::operator[](int& post)
 	return this->person[0];
 }
 
-pair<int, string>& EData::operator[](string& PIB)
-{
-	for (int i = 0; i < this->size; i++)
-		if (PIB == this->person[i].second)
-			return this->person[i];
+//pair<string, string>& EData::operator[](string& PIB)
+//{
+//	for (int i = 0; i < this->size; i++)
+//		if (PIB == this->person[i].second)
+//			return this->person[i];
+//
+//	this->CodeError = 2;
+//	return this ->person[0];
+//}
 
-	this->CodeError = 2;
-	return this >person[0];
-}
-
-ostream& operator<<(ostream& os, const pair<string, string> book)
+ostream& operator<<(ostream& os, const pair<string, string> person)
 {
-	os << EData::person.first << "\t" << EData::person.second << endl;
+	os << person.first << "\t" << person.second << endl;
 	return os;
 }
 
@@ -69,10 +70,10 @@ istream& operator>>(istream& is, pair<string, string> person)
 	return is;
 }
 
-ostream& operator<<(ostream& os, const EData arch)
+ostream& operator<<(ostream& os, const EData pers)
 {
-	for (int i = 0; i < arch.size; i++)
-		os << arch.person[i].first << "\t" << arch.person[i].second << endl;
-	os << "Code error: " << arch.CodeError << endl;
+	for (int i = 0; i < pers.size; i++)
+		os << pers.person[i].first << "\t" << pers.person[i].second << endl;
+	os << "Code error: " << pers.CodeError << endl;
 	return os;
 }
